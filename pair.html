@@ -3,179 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pair with Crazy Tech Inc</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <title>Pair with Me</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
   <style>
     body {
-      margin: 0;
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #2d2d44);
-      color: white;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
       justify-content: center;
-      padding: 2rem;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #ffffff, #ebebeb);
+      font-family: Arial, sans-serif;
     }
 
     .container {
-      max-width: 450px;
-      width: 100%;
-      background: #2c2c3e;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box {
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       text-align: center;
-      animation: fadeIn 1s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #58fcd6;
-    }
-
-    .description {
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      color: #dcdcdc;
-    }
-
-    img {
-      width: 100px;
-      margin-bottom: 1rem;
-      border-radius: 50%;
-      border: 2px solid #58fcd6;
+    #text {
+      color: #000;
     }
 
     .input-container {
       display: flex;
-      background: #3c3c50;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #c5c5c5 0%, #ffffff 100%);
+      box-shadow: 20px 20px 20px #d8d8d8, -10px -10px 20px #f8f8f8;
+      padding: 0.3rem;
+      gap: 0.3rem;
+      max-width: 300px;
+      width: 100%;
+      border-radius: 1rem;
+      flex-wrap: wrap;
     }
 
-    input {
+    .input-container input {
+      border-radius: 0.8rem;
+      background: #e8e8e8;
+      box-shadow: inset 13px 13px 10px #dcdcdc, inset -13px -13px 10px #f4f4f4;
       flex: 1;
-      padding: 0.8rem;
+      padding: 1rem;
       border: none;
-      background: transparent;
-      color: white;
+      color: #5e5e5e;
+      transition: all 0.2s ease-in-out;
       font-size: 1rem;
     }
 
-    input:focus {
+    .input-container input:focus {
       outline: none;
+      border: 2px solid #4998FF;
+      box-shadow: inset 13px 13px 10px #BFF0FA, inset -13px -13px 10px #f4f4f4;
     }
 
-    button {
-      background: #58fcd6;
+    .input-container button {
+      flex: 1;
+      padding: 1rem;
+      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: white;
       border: none;
-      padding: 0.8rem 1rem;
-      font-weight: bold;
+      border-radius: 0.8rem;
+      box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
       cursor: pointer;
-      color: #1e1e2f;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease-in-out;
     }
 
-    button:hover {
-      background: #3cf0c8;
+    .input-container button:hover {
+      background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
     }
 
-    #pair {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-
-    #copy {
-      cursor: pointer;
-      color: #ff6565;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #aaa;
+    .centered-text {
+      text-align: center;
+      color: #000;
     }
 
     @media (max-width: 500px) {
-      .container {
-        padding: 1.5rem;
+      .box {
+        width: 90%;
       }
-
-      input, button {
-        font-size: 0.95rem;
+      .input-container {
+        flex-direction: column;
       }
-
-      img {
-        width: 80px;
+      .input-container input,
+      .input-container button {
+        width: 100%;
+        border-radius: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <img src="https://i.ibb.co/QfzHwF7/crazy-logo.png" alt="Crazy Tech Logo">
-    <h1>Crazy Tech Inc</h1>
-    <p class="description">Entrez votre numéro WhatsApp avec l’indicatif du pays pour obtenir un code de pairage sécurisé.</p>
-
-    <div class="input-container">
-      <input type="number" id="number" placeholder="Ex: 241xxxxxxx">
-      <button id="submit">Obtenir</button>
+    <div class="main">
+      <div class="box" id="box">
+        <div id="text">
+          <i class="fa fa-user fa-2x"></i>
+          <h3 class="centered-text">© CRAZY TECH INC</h3>
+          <p class="centered-text">Enter your number with country code:</p>
+          <div class="input-container">
+            <input placeholder="241..." type="number" id="number" />
+            <button id="submit">Submit ✅</button>
+          </div>
+          <a id="waiting-message" class="centered-text" style="display: none;">Please wait for some time...</a>
+          <br />
+          <main id="pair"></main>
+        </div>
+      </div>
     </div>
-
-    <div id="pair"></div>
   </div>
-
-  <footer>© 2025 Crazy Tech Inc. Tous droits réservés.</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
-    const numberInput = document.getElementById("number");
-    const submitBtn = document.getElementById("submit");
-    const pairDiv = document.getElementById("pair");
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
 
     async function Copy() {
-      const copyText = document.getElementById("copy").innerText;
-      await navigator.clipboard.writeText(copyText.replace('CODE: ', ''));
-      const element = document.getElementById("copy");
-      element.innerText = "COPIÉ ✅";
-      element.style.color = "#58fcd6";
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      obj.innerText = "COPIED";
+      obj.style = "color:blue;font-weight:bold";
+      obj.size = "5";
       setTimeout(() => {
-        element.innerText = copyText;
-        element.style.color = "#ff6565";
-      }, 2000);
+        obj.innerText = text;
+        obj.style = "color:black;font-weight-bold";
+        obj.size = "5";
+      }, 500);
     }
 
-    submitBtn.addEventListener("click", async (e) => {
+    b.addEventListener("click", async (e) => {
       e.preventDefault();
-      const value = numberInput.value.trim();
-      if (!value || value.length < 9) {
-        pairDiv.innerHTML = `<p style="color: #ff6565;">Veuillez entrer un numéro valide avec indicatif pays.</p>`;
-        return;
-      }
-
-      const sanitized = value.replace(/[^0-9]/g, '');
-      numberInput.value = `+${sanitized}`;
-      numberInput.style.color = "#58fcd6";
-
-      pairDiv.innerHTML = `<p>🔄 Veuillez patienter...</p>`;
-
-      try {
-        const { data } = await axios(`/code?number=${sanitized}`);
-        const code = data.code || "Indisponible";
-        pairDiv.innerHTML = `<div id="copy" onclick="Copy()">CODE: <span>${code}</span></div>`;
-      } catch (err) {
-        pairDiv.innerHTML = `<p style="color:red;">Erreur lors de la récupération du code.</p>`;
+      if (!c.value) {
+        a.innerHTML = '<a style="color:black;font-weight:bold">Enter your WhatsApp number with a country code</a><br><br>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:black;font-weight:bold">Invalid number format</a><br><br>';
+      } else {
+        const bc = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = bc.split('');
+        cc.map(a => {
+          bbc += a;
+          if (bbc.length == 3) {
+            bb += " " + a;
+          } else if (bbc.length == 8) {
+            bb += " " + a;
+          } else {
+            bb += a;
+          }
+        });
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:black;font-size:20px";
+        a.innerHTML = '<a style="color:black;font-weight:bold">Please wait for some time</a><br><br>';
+        let { data } = await axios(`/code?number=${bc}`);
+        let code = data.code || "Service Unavailable";
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:black;font-weight:bold">' + code + '</span></font><br><br><br>';
       }
     });
   </script>
