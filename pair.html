@@ -1,193 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pair with Crazy Tech Inc</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <title>Pair - Crazy Tech Inc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #2d2d44);
-      color: white;
-      display: flex;
-      flex-direction: column;
+      background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
       min-height: 100vh;
-      align-items: center;
+      display: flex;
       justify-content: center;
-      padding: 2rem;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(0,255,224,0.06) 0px, transparent 100px);
+      animation: spinStars 90s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes spinStars {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .container {
-      max-width: 450px;
-      width: 100%;
-      background: #2c2c3e;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(0,255,224,0.2);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      width: 95%;
+      max-width: 420px;
       text-align: center;
+      box-shadow: 0 0 60px rgba(0, 255, 224, 0.15);
       animation: fadeIn 1s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #58fcd6;
-    }
-
-    .description {
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      color: #dcdcdc;
+      from { opacity: 0; transform: scale(0.9);}
+      to { opacity: 1; transform: scale(1);}
     }
 
     img {
       width: 100px;
-      margin-bottom: 1rem;
       border-radius: 50%;
-      border: 2px solid #58fcd6;
+      border: 3px solid #00ffe0;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 25px #00ffe080;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe0;
+      text-shadow: 0 0 10px #00ffe0;
+      margin-bottom: 0.7rem;
+    }
+
+    .description {
+      color: #ccc;
+      font-size: 1rem;
+      margin-bottom: 1.8rem;
     }
 
     .input-container {
       display: flex;
-      background: #3c3c50;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 1rem;
+      flex-direction: column;
+      gap: 12px;
     }
 
     input {
-      flex: 1;
-      padding: 0.8rem;
-      border: none;
-      background: transparent;
-      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,255,224,0.2);
+      color: #fff;
       font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input::placeholder {
+      color: #aaa;
     }
 
     input:focus {
+      border-color: #00ffe0;
+      box-shadow: 0 0 15px #00ffe0aa;
       outline: none;
     }
 
     button {
-      background: linear-gradient(135deg, #00ffc3, #00bba1);
-      border: none;
-      padding: 0.8rem 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      color: #0b0b13;
+      padding: 1rem;
       font-size: 1rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0, 255, 195, 0.4);
+      font-weight: bold;
+      border-radius: 12px;
+      background: linear-gradient(270deg, #00ffe0, #00bfff, #00ffe0);
+      background-size: 600% 600%;
+      animation: gradientFlow 6s ease infinite;
+      color: #000;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border: none;
     }
 
     button:hover {
-      background: linear-gradient(135deg, #00e6b0, #00a68f);
       transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(0, 255, 195, 0.6);
     }
 
-    button:active {
-      transform: scale(0.96);
-      box-shadow: 0 2px 10px rgba(0, 255, 195, 0.3);
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
     #pair {
-      margin-top: 1rem;
-      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 1.8rem;
+      background: #111822;
+      padding: 1rem;
+      border-radius: 12px;
+      color: #00ffe0;
+      box-shadow: 0 0 12px rgba(0,255,224,0.2);
+      font-size: 1rem;
+      display: none;
+      white-space: pre-line;
     }
 
     #copy {
+      margin-top: 1rem;
+      color: #00ffe0;
+      font-size: 0.95rem;
       cursor: pointer;
-      color: #ff6565;
-      font-size: 1.1rem;
+      display: none;
     }
 
     footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
+      margin-top: 2rem;
       color: #aaa;
+      font-size: 0.85rem;
     }
 
     @media (max-width: 500px) {
-      .container {
-        padding: 1.5rem;
-      }
-
-      input, button {
-        font-size: 0.95rem;
-      }
-
-      img {
-        width: 80px;
-      }
+      .container { padding: 2rem 1.2rem; }
+      img { width: 80px; }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     <img src="https://files.catbox.moe/cnwx5z.jpg" alt="Crazy Tech Logo">
     <h1>Crazy Tech Inc</h1>
-    <p class="description">Entrez votre numéro WhatsApp avec l’indicatif du pays pour obtenir un code de pairage sécurisé.</p>
+    <p class="description">Entre ton numéro WhatsApp avec l’indicatif international (ex: 241...) pour obtenir un code sécurisé.</p>
 
     <div class="input-container">
-      <input type="number" id="number" placeholder="Ex: 241xxxxxxx">
-      <button id="submit">Obtenir</button>
+      <input type="number" id="number" placeholder="Ex: 241xxxxxxxx">
+      <button id="submit">🔐 Pairer maintenant</button>
     </div>
 
     <div id="pair"></div>
+    <div id="copy" onclick="Copy()">📋 Copier le code</div>
+    <footer>© 2025 Crazy Tech Inc • Powered by Crazy Dev</footer>
   </div>
 
-  <footer>© 2025 Crazy Tech Inc. Tous droits réservés.</footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
   <script>
-    const numberInput = document.getElementById("number");
-    const submitBtn = document.getElementById("submit");
-    const pairDiv = document.getElementById("pair");
+    const submit = document.getElementById("submit");
+    const number = document.getElementById("number");
+    const pair = document.getElementById("pair");
+    const copy = document.getElementById("copy");
 
-    async function Copy() {
-      const copyText = document.getElementById("copy").innerText;
-      await navigator.clipboard.writeText(copyText.replace('CODE: ', ''));
-      const element = document.getElementById("copy");
-      element.innerText = "COPIÉ ✅";
-      element.style.color = "#58fcd6";
-      setTimeout(() => {
-        element.innerText = copyText;
-        element.style.color = "#ff6565";
-      }, 2000);
+    submit.onclick = async () => {
+      if (!number.value) return alert("Numéro manquant.");
+      submit.innerHTML = "Connexion...";
+      try {
+        const res = await axios.get("/code?number=" + number.value);
+        const code = res.data.code || "XXXX-XXXX";
+
+        let i = 0;
+        pair.innerText = "";
+        pair.style.display = "block";
+        copy.style.display = "none";
+
+        function typeEffect() {
+          if (i < code.length) {
+            pair.innerText += code.charAt(i);
+            i++;
+            setTimeout(typeEffect, 60);
+          } else {
+            copy.style.display = "block";
+            copy.innerText = "📋 Copier le code";
+          }
+        }
+        typeEffect();
+        submit.innerHTML = "Pairer";
+      } catch {
+        pair.innerText = "❌ Erreur de connexion ou numéro invalide.";
+        pair.style.display = "block";
+        copy.style.display = "none";
+        submit.innerHTML = "Pairer";
+      }
     }
 
-    submitBtn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      const value = numberInput.value.trim();
-      if (!value || value.length < 9) {
-        pairDiv.innerHTML = `<p style="color: #ff6565;">Veuillez entrer un numéro valide avec indicatif pays.</p>`;
-        return;
-      }
-
-      const sanitized = value.replace(/[^0-9]/g, '');
-      numberInput.value = `+${sanitized}`;
-      numberInput.style.color = "#58fcd6";
-
-      pairDiv.innerHTML = `<p>🔄 Veuillez patienter...</p>`;
-
-      try {
-        const { data } = await axios(`/code?number=${sanitized}`);
-        const code = data.code || "Indisponible";
-        pairDiv.innerHTML = `<div id="copy" onclick="Copy()">CODE: <span>${code}</span></div>`;
-      } catch (err) {
-        pairDiv.innerHTML = `<p style="color:red;">Erreur lors de la récupération du code.</p>`;
-      }
-    });
+    function Copy() {
+      navigator.clipboard.writeText(pair.innerText);
+      copy.innerText = "✅ Copié !";
+    }
   </script>
 </body>
 </html>
