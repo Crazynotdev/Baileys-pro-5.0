@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crazy Tech Inc</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,152 +14,176 @@
 
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(to right, #000000, #0f0f0f);
-      color: #fff;
-      line-height: 1.6;
+      background: radial-gradient(ellipse at center, #0f0f0f 0%, #000000 100%);
+      color: #ffffff;
       overflow-x: hidden;
     }
 
-    header {
-      padding: 60px 20px 30px;
-      text-align: center;
-      background: radial-gradient(circle at center, #00ffe0 0%, #000 80%);
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://i.imgur.com/ZNY1EvF.png') repeat;
+      z-index: -1;
+      animation: animateStars 100s linear infinite;
+      opacity: 0.1;
     }
 
-    header h1 {
+    @keyframes animateStars {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 10000px;}
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 30px;
+      background: linear-gradient(to bottom, #00ffe0, #000);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
-      color: #00ffe0;
-      text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0;
+      font-size: 3rem;
+      text-shadow: 0 0 15px #00ffe0;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 1100px;
+      margin: auto;
       padding: 40px 20px;
     }
 
-    .image-section {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .image-section img {
-      max-width: 90%;
+    .banner img {
+      max-width: 100%;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 255, 224, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .image-section img:hover {
-      transform: scale(1.03);
+      box-shadow: 0 0 30px rgba(0, 255, 224, 0.3);
+      margin-bottom: 30px;
     }
 
     .description {
       font-size: 1.2rem;
       text-align: center;
       color: #ccc;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #121212;
+      padding: 25px;
+      border-radius: 15px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(0,255,224,0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #00ffe0;
+    }
+
+    .card h3 {
+      color: #00ffe0;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #aaa;
     }
 
     .buttons {
+      margin-top: 50px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      padding: 15px 30px;
-      font-size: 18px;
-      color: #00ffe0;
-      text-transform: uppercase;
+      padding: 14px 28px;
+      font-size: 1rem;
       border: 2px solid #00ffe0;
-      border-radius: 40px;
       background: transparent;
+      color: #00ffe0;
+      border-radius: 30px;
       cursor: pointer;
-      overflow: hidden;
-      position: relative;
-      transition: 0.3s ease;
       font-weight: bold;
       letter-spacing: 1px;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300%;
-      height: 300%;
-      background: radial-gradient(circle, rgba(0,255,224,0.2) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: 0.4s ease;
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .btn:hover::before {
-      opacity: 1;
+      transition: all 0.3s ease;
+      position: relative;
     }
 
     .btn:hover {
       background: #00ffe0;
       color: #000;
-      box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0;
-      transform: scale(1.08);
+      box-shadow: 0 0 25px #00ffe0;
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.4rem;
+      header {
+        font-size: 2rem;
       }
-      .description {
-        font-size: 1rem;
-        padding: 0 10px;
-      }
-      .btn {
+      .card {
         width: 90%;
       }
     }
-
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>⚡ CRAZY TECH INC ⚡</h1>
-  </header>
+  <div class="stars"></div>
+
+  <header>⚡ CRAZY TECH INC ⚡</header>
 
   <div class="container">
 
-    <div class="image-section">
-      <img src="https://files.catbox.moe/tcrnst.jpg" alt="Crazy Tech Inc Banner" />
+    <div class="banner">
+      <img src="https://files.catbox.moe/tcrnst.jpg" alt="Banner Crazy" />
     </div>
 
     <div class="description">
-      🚀 *Bienvenue chez CRAZY TECH INC*, ton hub 100 % Gabon pour les bots WhatsApp, les projets web viraux et l’innovation tech made in Crazy Dev.  
-      <br /><br />
-      Ici, on fusionne fun, technologie et créativité pour propulser tes idées vers l’infini.
+      Bienvenue sur le hub Gabonais de l'innovation déjantée 🧠🚀 ! Crazy Tech Inc, c’est l’univers des bots WhatsApp, des projets viraux, des idées qui claquent… Made by Crazy Dev.
+    </div>
+
+    <div class="services">
+      <div class="card">
+        <h3>Bot WhatsApp</h3>
+        <p>Connecte ton bot CRAZY-XMD en quelques secondes avec ton code pairage QR ou numéroté.</p>
+      </div>
+      <div class="card">
+        <h3>Projets Web</h3>
+        <p>Des idées de sites qui buzzent, créés pour cartonner localement et impressionner à l’international.</p>
+      </div>
+      <div class="card">
+        <h3>Chaîne WhatsApp</h3>
+        <p>Suis nos actus, délires tech et drops exclusifs sur notre canal officiel Crazy Dev.</p>
+      </div>
     </div>
 
     <div class="buttons">
-      <button class="btn" onclick="window.open('/qr')">QR Code</button>
-      <button class="btn" onclick="window.open('/pair')">Pair Code</button>
-      <button class="btn" onclick="window.open('https://whatsapp.com/channel/0029VbANsvkIiRp31CEW3C2C')">WhatsApp</button>
+      <button class="btn" onclick="window.open('/qr')">Code QR</button>
+      <button class="btn" onclick="window.open('/pair')">Code Pairage</button>
+      <button class="btn" onclick="window.open('https://whatsapp.com/channel/0029VbANsvkIiRp31CEW3C2C')">Notre chaîne WhatsApp</button>
     </div>
 
   </div>
 
-  <footer>© 2025 CRAZY TECH INC • Made with 💚 by Crazy Dev</footer>
+  <footer>© 2025 CRAZY TECH INC • Made in Gabon 🇬🇦 with 💚 by Crazy Dev</footer>
 
 </body>
 </html>
