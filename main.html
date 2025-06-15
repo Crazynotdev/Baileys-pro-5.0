@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crazy Tech Inc ⚡</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
     body {
       display: flex;
       flex-direction: column;
@@ -11,10 +14,12 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      font-family: 'Roboto', 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #4e9f3d, #34d7b7, #55c7f7);
+      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       background-size: 300% 300%;
-      animation: gradientAnimation 10s ease infinite;
+      animation: gradientAnimation 12s ease infinite;
+      color: white;
+      overflow: hidden;
     }
 
     @keyframes gradientAnimation {
@@ -24,36 +29,40 @@
     }
 
     h1 {
-      color: white;
       font-size: 3.5rem;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       text-align: center;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       font-weight: 700;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0, 0 0 30px #00ffe0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px #00ffe0; }
+      50% { text-shadow: 0 0 25px #00ffe0; }
     }
 
     .btn {
-      width: 250px;
-      padding: 15px 25px;
-      margin: 10px;
-      background: transparent;
-      border-radius: 25px;
-      border: 2px solid #ffffff;
+      width: 260px;
+      padding: 16px 28px;
+      margin: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 30px;
+      border: 2px solid #00ffe0;
       font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
-      color: white;
+      color: #00ffe0;
       text-align: center;
       position: relative;
       overflow: hidden;
       cursor: pointer;
       transition: all 0.4s ease;
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 255, 224, 0.3);
     }
 
-    /* Add shine effect on hover */
     .btn::before {
       content: '';
       position: absolute;
@@ -61,7 +70,7 @@
       left: -50%;
       height: 200%;
       width: 200%;
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(0, 255, 224, 0.1);
       transform: skewX(45deg);
       transition: all 0.5s;
     }
@@ -74,46 +83,41 @@
     }
 
     .btn:hover {
-      background-color: #ffffff;
-      color: #333;
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.5);
-      transform: scale(1.05);
+      background-color: #00ffe0;
+      color: #111;
+      box-shadow: 0 0 25px #00ffe0, 0 0 35px #00ffe0;
+      transform: scale(1.07);
     }
 
     .btn:active {
       filter: brightness(0.9);
-      transform: scale(0.98);
+      transform: scale(0.95);
     }
 
-    /* Responsive Design */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2.2rem;
       }
       .btn {
         width: 80%;
-        padding: 12px 20px;
         font-size: 16px;
       }
     }
 
     @media (min-width: 600px) and (max-width: 1024px) {
       h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
       .btn {
-        width: 220px;
-        padding: 14px 22px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      h1 {
-        font-size: 3.5rem;
-      }
-      .btn {
-        width: 250px;
-        padding: 15px 25px;
+        width: 240px;
       }
     }
 
@@ -121,9 +125,15 @@
 </head>
 <body>
 
-  <button onclick="window.open(`/qr`)" class="btn">QR Code</button>
-  <button onclick="window.open(`/pair`)" class="btn">Pair Code</button>
-  <button onclick="window.open(`https://whatsapp.com/channel/0029VbANsvkIiRp31CEW3C2C`)" class="btn">WhatsApp</button>
+  <h1>Crazy Tech Inc</h1>
+
+  <button onclick="window.open('/qr')" class="btn">QR Code</button>
+  <button onclick="window.open('/pair')" class="btn">Pair Code</button>
+  <button onclick="window.open('https://whatsapp.com/channel/0029VbANsvkIiRp31CEW3C2C')" class="btn">WhatsApp</button>
+
+  <footer>
+    © 2025 Crazy Tech Inc — Made with ⚡ by Crazy Dev
+  </footer>
 
 </body>
 </html>
